@@ -1,5 +1,8 @@
-mylist = [1, 2, 3, 4, 5]
-print mylist
-print mylist[1] #python counts from 0 and prints 2 as the result
-print mylist[1:4] #prints second to fifth item
-
+a=range(1,11) #one to ten values
+print a
+a[0]=10 #replace firt item with 10
+print a 
+a.append(11) # adds 11 to tjhe list
+print a
+a.extend([12, 13, 14]) #adds another list to existing list
+print a 
