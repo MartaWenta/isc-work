@@ -1,18 +1,7 @@
-#variables
-b=4
-c=3
-a=(b**2+c**2)**0.5 #equation
-print a 
-
-print type(a) #print the type of variable
-print type(b)
-print type(c)
-
-a=int(a)
-a,b,c=str(a),str(b),str(c) #transform to string
-
-
-print a + " squared equals " + b + " squared " + c + " squared ." #print types
-
-
-
+mylist = [23,"hi",2.4e-10]
+print mylist
+count = 0
+while count < 3: #while count is less than 3 
+          item = mylist[count] 
+          print item, mylist.index(item) #index -prints position on the list
+          count += 1 #without it -neverending with 0s
