@@ -1,8 +1,13 @@
-a=range(1,11) #one to ten values
-print a
-a[0]=10 #replace firt item with 10
-print a 
-a.append(11) # adds 11 to tjhe list
-print a
-a.extend([12, 13, 14]) #adds another list to existing list
-print a 
+one = range(1,11)
+print one
+one[0]=10
+print one
+one.append(11)
+print one
+one.append([12,13,14]) #wrong [10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, [12, 13, 14]]
+
+print one
+one.extend([12,13,14])#correct 10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, [12, 13, 14], 12, 13, 14]
+
+print one
+
