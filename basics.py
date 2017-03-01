@@ -1,11 +1,10 @@
-def double_it(number):
-    return number*2 
+def calc_hypo(a,b):
+    hypo = (a**2 + b**2)**0.5
+    return hypo
 
-x = double_it(2)
-print x
+print calc_hypo(3,4)
 
-y=double_it(3.4)
-print y
 
-print double_it("marta")
+
+
 
