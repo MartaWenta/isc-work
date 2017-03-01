@@ -1,10 +1,8 @@
 with open ('weather.csv','r') as reader:
-    line = reader.readline() #read the first line
-    while line: #loop which continues until readline() returns empty string
-        print line
-        line = reader.readline()
-    print "the end"
-
+    lines = reader.readline() #read the first line
+    rain=[]
+    for line in reader.readlines(): #reads lines from all lines
+        print line  
 
     
 
