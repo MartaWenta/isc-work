@@ -7,8 +7,13 @@ with open ('weather.csv','r') as reader:
         rain.append(r) #append to the rain list
 print rain 
 
+with open ('myrain2.txt','w') as writer: #save to file
+  writer.write(str(rain))  
+    for r in rain:                      
+       writer.write(str(r)+"\n")
     
 
-
+with open ('myrain2.txt','w') as writer: #save to file
+  writer.write(str(rain)) #also works but not as a column of values
 
 
