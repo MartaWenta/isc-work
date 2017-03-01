@@ -7,4 +7,8 @@ for i in values:
 
 print forward
 print backward
+forward.reverse() #or forward[::-1]
+print forward
+
+
 
