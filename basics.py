@@ -1,15 +1,16 @@
+import numpy as np
 import numpy.ma as MA
-a = MA.masked_array(range(9), fill_value = -999)
-print a, a.fill_value
-a[2] = MA.masked
-print a
-print a.mask #printing the mask
-b = MA.masked_where(a >6, a) #a less than 7  so the mask is set to larger than 6 
-print 'b=', b 
-print 'b missing values', b.fill_value
-x= MA.filled(b)
-print b
-print type(b)
+m1 = MA.masked_array(range(1,9))
+print m1
+m2= m1.reshape(2,4) #2 rows 4 columns
+print m2
+m3 =MA.masked_greater(m2, 6)
+print m3
+print m3*100
+m4 = m3 - np.ones((2,4))
+print m4
+
+
 
 
  
