@@ -1,14 +1,18 @@
-import numpy as np
-a = np.arange(10)
+import numpy.ma as MA
+a = MA.masked_array(range(9), fill_value = -999)
+print a, a.fill_value
+a[2] = MA.masked
 print a
-print a < 3
-print np.less(a,3) #same result as above
+print a.mask #printing the mask
+b = MA.masked_where(a >6, a) #a less than 7  so the mask is set to larger than 6 
+print 'b=', b 
+print 'b missing values', b.fill_value
+x= MA.filled(b)
+print b
+print type(b)
 
-condition = np.logical_or(a < 3, a >8)
-new_a = np.where(condition, a*5, a*-5)
-print new_a
 
-#when only need a<3 and a>8
-condition = np.logical_or(a < 3, a >8)
-new_a = np.where(condition)
-print new_a
+ 
+
+
+    
