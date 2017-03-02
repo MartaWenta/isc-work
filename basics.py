@@ -1,10 +1,11 @@
 import numpy as np
 a = np.array([range(4), range(10,14)])
 print a
-print np.size(a) #size of an array
-print np.shape(a) #shape of an array
-print np.min(a) 
-print np.max(a)
+print np.reshape(a,(2,2,2))
+print np.transpose(a)
+print np.ravel(a)
+print a.astype(np.float64) #change the type of an array
+
 
 
 
