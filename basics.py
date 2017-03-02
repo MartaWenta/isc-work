@@ -1,9 +1,7 @@
 
+a = set([0,1,2,3,4,5])
+b = set([2,4,6,8])
 
-import sys
-from dancing.dance import boogie
-moves = sys.argv[1:] #set a variable moves to all command line arguments sent to the script sys.argv
-boogie(moves)
-
-
+print a.union(b)
+print a.intersection(b)
 
