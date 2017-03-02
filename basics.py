@@ -1,7 +1,12 @@
+band = (["mel","geri","victoria","mel","emma"])
+counts = {}
 
-a = set([0,1,2,3,4,5])
-b = set([2,4,6,8])
+for name in band:
+    if name not in counts:
+        counts[name] = 1
+    else:
+        counts[name] += 1
 
-print a.union(b)
-print a.intersection(b)
+for name in counts:    #in order to print all names not only the first one
+    print name, counts[name] #prints name and number of times it appears
 
