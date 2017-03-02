@@ -1,16 +1,11 @@
-import numpy as np
-import numpy.ma as MA
-m1 = MA.masked_array(range(1,9))
-print m1
-m2= m1.reshape(2,4) #2 rows 4 columns
-print m2
-m3 =MA.masked_greater(m2, 6)
-print m3
-print m3*100
-m4 = m3 - np.ones((2,4))
-print m4
-
-
+import matplotlib.pyplot as plt
+times= range(7)
+co2conc= [250, 265, 272, 260, 300, 320, 389]
+plt.plot(times, co2conc, 'r')
+plt.title('exercise 2')
+plt.xlabel('times')
+plt.ylabel('conc')
+plt.show()
 
 
  
