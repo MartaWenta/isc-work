@@ -1,17 +1,10 @@
 import numpy as np
-
-a = np.array([2, 3.2, 5.5, -6.4, -2.2, 2.4])
+a = np.array([range(4), range(10,14)])
 print a
-print a[1]
-print a[1:4]
+print np.size(a) #size of an array
+print np.shape(a) #shape of an array
+print np.min(a) 
+print np.max(a)
 
-b = np.array([[2, 3.2, 5.5, -6.4, -2.2, 2.4],
-             [1, 22, 4, 0.1, 5.3, -9],
-             [3, 1, 2.1, 21, 1.1, -2]]) #nawiasyyy!!!!
 
-print b
-print b[:,3]
-print b[1:4,0:4]
-print b[1:,2]
-print b[:]
 
