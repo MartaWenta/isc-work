@@ -1,14 +1,11 @@
 import numpy as np
-a = np.array([range(4), range(10,14)])
-b = np.array([2, -1, 1, 0])
-print 'a', a
-print 'b', b
-print a*b
-b1= b*100
-b2= b*100.0
-print b1, b2
-print b1 == b2
-print b1.dtype, b2.dtype
+a = np.arange(10)
+print a
+print a < 3
+print np.less(a,3) #same result as above
 
+condition = np.logical_or(a < 3, a >8)
+new_a = np.where(condition, a*5, a*-5)
+print new_a
 
-
+print 3< a< 8
