@@ -1,34 +1,25 @@
 from datetime import datetime
-import serial,io
+from csv import reader 
 
-outfile='/tmp/serial-temperature.tsv'
+def convert_time(tm):
+    tm = datetime.strptime(tm, "%Y-%m-%dT%H:%M:%S.%f")
+    return tm
 
+def convert_temp(temp):
+    value = temp.strip("+").strip("C").lstrip("0")
+    return float(value) + 273.15
 
-ser = serial.Serial(
-    port='/dev/ttyUSB0',
-    baudrate =9600,
-)
-
-
-#print help(io.TextIOWrapper)
-
-
-sio  = io.TextIOWrapper(
-    io.BufferedRWPair(ser,ser,1),
-    encoding = 'ascii',newline = '\r'
-)
-
-with open(outfile, 'a') as f:
-    while ser.isOpen():
-        datastring = sio.readline()
-        f.write(datetime.utcnow().isoformat() + '\t' + datastring + '\n')
-        f.flush()
-
-ser.close()    
+infile = 'temperature_log'
+outfile = 'sensor_data.nc'
 
 
+times = []
+temps = []
 
- 
+with open(infile, 'rb') as tsvfile:
+    tsvreader = reader(tsvfile, delimiter = '\t')
+    for row in tsvreader:
+        times.append(convert_time(row[0]))
+        temps.append(convert_temp(row[1]))
 
 
-    
