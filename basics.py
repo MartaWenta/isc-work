@@ -1,13 +1,31 @@
-import matplotlib.pyplot as plt
-times = range(7)
-co2conc = [250, 265, 272, 260, 300, 320, 389]
-temp = [14.1, 15.5, 16.3, 18.1, 17.3, 19.1, 20.2] 
-plt.plot(times, co2conc, 'r',
-        times, temp, 'g--')
-plt.title('exercise 2')
-plt.xlabel('times')
-plt.ylabel('conc')
-plt.show()
+from datetime import datetime
+import serial,io
+
+outfile='/tmp/serial-temperature.tsv'
+
+
+ser = serial.Serial(
+    port='/dev/ttyUSB0',
+    baudrate =9600,
+)
+
+
+#print help(io.TextIOWrapper)
+
+
+sio  = io.TextIOWrapper(
+    io.BufferedRWPair(ser,ser,1),
+    encoding = 'ascii',newline = '\r'
+)
+
+with open(outfile, 'a') as f:
+    while ser.isOpen():
+        datastring = sio.readline()
+        f.write(datetime.utcnow().isoformat() + '\t' + datastring + '\n')
+        f.flush()
+
+ser.close()    
+
 
 
  
